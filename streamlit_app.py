@@ -46,7 +46,7 @@ def load_data():
     return pd.read_csv(DATA_PATH)
 
 @st.cache_data
-def get_embeddings(model, data):
+def get_embeddings(_model, data):
     """Get or compute embeddings for all recipes"""
     if os.path.exists(EMBEDDINGS_PATH):
         with open(EMBEDDINGS_PATH, 'rb') as f:
@@ -59,7 +59,7 @@ def get_embeddings(model, data):
             texts.append(combined_text)
         
         # Generate embeddings
-        embeddings = model.encode(texts)
+        embeddings = _model.encode(texts)
         
         # Save embeddings
         with open(EMBEDDINGS_PATH, 'wb') as f:
