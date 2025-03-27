@@ -104,8 +104,8 @@ def search_recipes(query, model, data, embeddings, top_k=3):
         results.append({
             'name': data.iloc[idx]['name'],
             'similarity': similarities[idx],
-            'ingredients': data.iloc[idx]['text_ingradiant'],
-            'method': data.iloc[idx]['food_method']
+            'ingredients': data.iloc[idx]['ingredient'],
+            'method': data.iloc[idx]['method']
         })
     
     return results
