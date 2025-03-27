@@ -55,7 +55,7 @@ def get_embeddings(_model, data):
         # Combine all text for each recipe
         texts = []
         for _, row in data.iterrows():
-            combined_text = f"{row['name']} {row['text_ingradiant']} {row['food_method']}"
+            combined_text = f"{row['name']} {row['ingredient']} {row['method']}"
             texts.append(combined_text)
         
         # Generate embeddings
